@@ -1,0 +1,8 @@
+.profile__info {
+  max-width: 294px;
+}
+@media (max-width: 320px) {
+  .profile__info {
+    max-width: 189px;
+  }
+}

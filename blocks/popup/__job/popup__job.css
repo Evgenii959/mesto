@@ -1,0 +1,10 @@
+.popup__job {
+  margin-top: 30px;
+  padding-bottom: 13px;
+  margin-bottom: 48px;
+}
+@media (max-width: 320px) {
+  .popup__job {
+    margin-bottom: 45px;
+  }
+}
