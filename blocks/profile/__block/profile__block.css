@@ -2,8 +2,9 @@
   display: flex;
   width: 100%;
   margin: 22px 0 25px;
+  word-wrap: break-word;
 }
-@media (max-width: 320px) {
+@media (max-width: 650px) {
   .profile__block {
     max-width: 282px;
     justify-content: end;

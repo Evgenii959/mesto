@@ -2,7 +2,7 @@
   display: flex;
   margin: 40px auto 51px;
 }
-@media (max-width: 320px) {
+@media (max-width: 650px) {
   .profile {
     flex-direction: column;
     margin-top: 38.25px;

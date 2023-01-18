@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="page">
-  <header class="header">
+  <header>
     <img class="header__logo" src="./images/logo.svg" alt="Логотип Россия">
+    <div class="header__line"></div> 
   </header>
   <main>
     <section class="profile">
@@ -18,51 +19,51 @@
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <p class="profile__subtitle">Исследователь океана</p>
         </div>
-        <button class="profile__icon" type="submit"></button>
+        <button class="profile__icon" type="button"></button>
       </div>
-      <div class="profile__plus"></div>
+      <button class="profile__plus" type="button"></button>
     </section>
     <section class="elements">
       <article class="element">
         <img class="element__image" src="./images/kirill-pershin-1088404-unsplash-2.jpg" alt="Карачаевск">
         <div class="element__title-heart">
           <h2 class="element__title">Карачаевск</h2>
-          <button onclick="myFunction(this)" class="element__heart"></button>
+          <button type="button" class="element__heart"></button>
         </div>
       </article>
       <article class="element">
         <img class="element__image" src="./images/эльбрус.jpg" alt="Гора Эльбрус">
         <div class="element__title-heart">
           <h2 class="element__title">Гора Эльбрус</h2>
-          <button onclick="myFunction(this)" class="element__heart"></button>
+          <button type="button" class="element__heart"></button>
         </div>
       </article>
       <article class="element">
         <img class="element__image" src="./images/dombai.jpg" alt="Домбай">
         <div class="element__title-heart">
           <h2 class="element__title">Домбай</h2>
-          <button onclick="myFunction(this)" class="element__heart"></button>
+          <button type="button" class="element__heart"></button>
         </div>
       </article>
       <article class="element">
         <img class="element__image" src="./images/эльбрус.jpg" alt="Гора Эльбрус">
         <div class="element__title-heart">
           <h2 class="element__title">Гора Эльбрус</h2>
-          <button onclick="myFunction(this)" class="element__heart"></button>
+          <button type="button" class="element__heart"></button>
         </div>
       </article>
       <article class="element">
         <img class="element__image" src="./images/dombai.jpg" alt="Домбай">
         <div class="element__title-heart">
           <h2 class="element__title">Домбай</h2>
-          <button onclick="myFunction(this)" class="element__heart"></button>
+          <button type="button" class="element__heart"></button>
         </div>
       </article>
       <article class="element">
         <img class="element__image" src="./images/kirill-pershin-1088404-unsplash-2.jpg" alt="Карачаевск">
         <div class="element__title-heart">
           <h2 class="element__title">Карачаево-Черкесия</h2>
-          <button onclick="myFunction(this)" class="element__heart"></button>
+          <button type="button" class="element__heart"></button>
         </div>
       </article>
     </section>
@@ -72,15 +73,15 @@
   </footer>
   <div class="popup">
     <div class="popup__container">
-      <form class="popup__content">
-        <h3 class="popup__title">Редактировать профиль</h3>
-        <input required type="text" class="popup__name" value="Жак-Ив Кусто" placeholder="Имя">
-        <input required type="text" class="popup__job" value="Исследователь океана" placeholder="О себе">
-        <button type="button" class="popup__close"></button>
+      <button type="button" class="popup__close"></button>
+      <h3 class="popup__title">Редактировать профиль</h3>
+      <form class="popup__content" name="Профиль">
+        <input required type="text" class="popup__name" name="Имя" value="Жак-Ив Кусто" placeholder="Имя">
+        <input required type="text" class="popup__name popup__name_form_job" name="О себе" value="Исследователь океана" placeholder="О себе">
         <button class="popup__submit" type="submit">Сохранить</button>
       </form>
     </div>
   </div>
-  <script src="./vendor/popups.js"></script>
+  <script src="./scripts/index.js"></script>
 </body>
 </html>
