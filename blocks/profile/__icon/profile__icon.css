@@ -7,7 +7,7 @@
   border: solid #FFFFFF 1px;
   max-width: 24px;
   max-height: 24px;
-  margin: 15px 0 0 18px;
+  margin: 15px 0 0 0;
   background-color: transparent;
 }
 .profile__icon:hover {
