@@ -8,6 +8,10 @@
   color: #FFFFFF;
   max-width: 358px;
   margin-top: 48px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
 }
 .popup__submit:hover {
   opacity: 0.8;
@@ -16,5 +20,7 @@
 @media (max-width: 320px) {
   .popup__submit  {
     margin-top: 45px;
+    font-size: 14px;
+    line-height: 17px;
   }
 }

@@ -15,15 +15,14 @@ function closePopup () {
 popupBtnClose.addEventListener('click', closePopup)
 
 let formElement = document.querySelector('.popup__content')
-let nameInput = document.querySelector('.popup__name')
+let nameInput = document.querySelector('.popup__name_form_full')
 let jobInput = document.querySelector('.popup__name_form_job')
 let profileInput = document.querySelector('.profile__title')
 let profileJob = document.querySelector('.profile__subtitle')
-
 function handleFormSubmit (evt) {
-    evt.preventDefault()
-    profileInput.textContent = nameInput.value
-    profileJob.textContent = jobInput.value
-    popup.classList.remove('popup_opened')
+  evt.preventDefault()
+  profileInput.textContent = nameInput.value
+  profileJob.textContent = jobInput.value
+  closePopup()
 }
 formElement.addEventListener('submit', handleFormSubmit)
