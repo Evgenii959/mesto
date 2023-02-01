@@ -23,47 +23,7 @@
       <button class="profile__plus" type="button"></button>
     </section>
     <section class="elements">
-      <article class="element">
-        <img class="element__image" src="./images/kirill-pershin-1088404-unsplash-2.jpg" alt="Карачаевск">
-        <div class="element__title-heart">
-          <h2 class="element__title">Карачаевск</h2>
-          <button type="button" class="element__heart"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img class="element__image" src="./images/эльбрус.jpg" alt="Гора Эльбрус">
-        <div class="element__title-heart">
-          <h2 class="element__title">Гора Эльбрус</h2>
-          <button type="button" class="element__heart"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img class="element__image" src="./images/dombai.jpg" alt="Домбай">
-        <div class="element__title-heart">
-          <h2 class="element__title">Домбай</h2>
-          <button type="button" class="element__heart"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img class="element__image" src="./images/эльбрус.jpg" alt="Гора Эльбрус">
-        <div class="element__title-heart">
-          <h2 class="element__title">Гора Эльбрус</h2>
-          <button type="button" class="element__heart"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img class="element__image" src="./images/dombai.jpg" alt="Домбай">
-        <div class="element__title-heart">
-          <h2 class="element__title">Домбай</h2>
-          <button type="button" class="element__heart"></button>
-        </div>
-      </article>
-      <article class="element">
-        <img class="element__image" src="./images/kirill-pershin-1088404-unsplash-2.jpg" alt="Карачаевск">
-        <div class="element__title-heart">
-          <h2 class="element__title">Карачаево-Черкесия</h2>
-          <button type="button" class="element__heart"></button>
-        </div>
+      <article class="list">
       </article>
     </section>
   </main>
@@ -81,6 +41,34 @@
       </form>
     </div>
   </div>
+  <div class="popup popup_add">
+    <div class="popup__container">
+      <button type="button" class="popup__close popup__close_add"></button>
+      <h3 class="popup__title">Редактировать профиль</h3>
+      <form class="popup__content popup__content_add" name="Карточка">
+        <input required type="text" class="popup__name popup__name_form_country" name="Название" value="" placeholder="Название">
+        <input required type="text" class="popup__name popup__name_form_src" name="Ссылка" value="" placeholder="Ссылка на картинку">
+        <button class="popup__submit popup__submit_add" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup_click">
+    <div class="popup__box">
+      <img class="popup__image" alt="Красивые места">
+      <button type="button" class="popup__close popup__close_image"></button>
+      <p class="popup__place"></p>
+    </div>
+  </div>
+  <template id="elements">
+    <article class="element">
+      <img class="element__image" alt="Путешествия">
+      <button class="element__trash"></button>
+      <div class="element__title-heart">
+        <h2 class="element__title"></h2>
+        <button type="button" class="element__heart"></button>
+      </div>
+    </article>
+  </template>
   <script src="./scripts/index.js"></script>
 </body>
 </html>
