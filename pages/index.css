@@ -32,4 +32,5 @@
 @import url(../blocks/element/__heart/_aktiv/element__heart_aktiv.css);
 @import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__box/popup__box.css);
-@import url(../blocks/popup/__place/popup__place.css);
+@import url(../blocks/popup/__subtitle/popup__subtitle.css);
+@import url(../blocks/img/img.css);

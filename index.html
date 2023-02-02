@@ -30,38 +30,38 @@
   <footer class="footer">
     <p class="footer__text">© 2022 Mesto Russia</p>
   </footer>
-  <div class="popup">
+  <div class="popup profile-popup">
     <div class="popup__container">
       <button type="button" class="popup__close"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
-      <form class="popup__content" name="Профиль">
-        <input required type="text" class="popup__name popup__name_form_full" name="Имя" value="Жак-Ив Кусто" placeholder="Имя">
-        <input required type="text" class="popup__name popup__name_form_job" name="О себе" value="Исследователь океана" placeholder="О себе">
+      <form class="popup__content profile-form" name="Профиль">
+        <input required type="text" class="popup__name profile-name" name="Имя" value="Жак-Ив Кусто" placeholder="Имя">
+        <input required type="text" class="popup__name profile-job" name="О себе" value="Исследователь океана" placeholder="О себе">
         <button class="popup__submit" type="submit">Сохранить</button>
       </form>
     </div>
   </div>
-  <div class="popup popup_add">
+  <div class="popup element-popup">
     <div class="popup__container">
-      <button type="button" class="popup__close popup__close_add"></button>
+      <button type="button" class="popup__close"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
-      <form class="popup__content popup__content_add" name="Карточка">
-        <input required type="text" class="popup__name popup__name_form_country" name="Название" value="" placeholder="Название">
-        <input required type="text" class="popup__name popup__name_form_src" name="Ссылка" value="" placeholder="Ссылка на картинку">
-        <button class="popup__submit popup__submit_add" type="submit">Сохранить</button>
+      <form class="popup__content element-form" name="Карточка">
+        <input required type="text" class="popup__name element-country" name="Название" value="" placeholder="Название">
+        <input required type="text" class="popup__name element-src" name="Ссылка" value="" placeholder="Ссылка на картинку">
+        <button class="popup__submit element-submit" type="submit">Сохранить</button>
       </form>
     </div>
   </div>
-  <div class="popup popup_click">
+  <div class="popup image-popup">
     <div class="popup__box">
-      <img class="popup__image" alt="Красивые места">
-      <button type="button" class="popup__close popup__close_image"></button>
-      <p class="popup__place"></p>
+      <img class="popup__image" alt="Красивые места.">
+      <button type="button" class="popup__close"></button>
+      <p class="popup__subtitle"></p>
     </div>
   </div>
   <template id="elements">
     <article class="element">
-      <img class="element__image" alt="Путешествия">
+      <img class="element__image" alt="Путешествия.">
       <button class="element__trash"></button>
       <div class="element__title-heart">
         <h2 class="element__title"></h2>
