@@ -7,21 +7,18 @@ profileOpenBtn.addEventListener('click', function () {
   jobInput.value = profileJob.textContent;
 });
 
-function openPopup (profilePopup) {
-  profilePopup.classList.add('popup_opened');
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
+};
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
 };
 
-// находим все крестики проекта по универсальному селектору
 const closeButtons = document.querySelectorAll('.popup__close');
 closeButtons.forEach((button) => {
-  // находим 1 раз ближайший к крестику попап 
-const popup = button.closest('.popup');
-  // устанавливаем обработчик закрытия на крестик
-button.addEventListener('click', () => closePopup(popup));
+  const popup = button.closest('.popup');
+  button.addEventListener('click', () => closePopup(popup));
 });
-function closePopup (popup) { 
-  popup.classList.remove('popup_opened'); 
-}; 
 
 const profileForm = document.querySelector('.profile-form');
 const nameInput = document.querySelector('.profile-name');
@@ -29,7 +26,7 @@ const jobInput = document.querySelector('.profile-job');
 const profileInput = document.querySelector('.profile__title');
 const profileJob = document.querySelector('.profile__subtitle');
 profileForm.addEventListener('submit', handleProfileFormSubmit);
-function handleProfileFormSubmit (evt) {
+function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileInput.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
@@ -70,17 +67,13 @@ const srcInput = document.querySelector('.element-src');
 
 const profilePlus = document.querySelector('.profile__plus');
 profilePlus.addEventListener('click', function () {
-  openPopupAdd(elementPopup);
+  openPopup(elementPopup);
 });
 
-function openPopupAdd (elementPopup) {
-  elementPopup.classList.add('popup_opened');
-};
-
 elementForm.addEventListener('submit', handleElementFormSubmit)
-function handleElementFormSubmit (event) {
+function handleElementFormSubmit(event) {
   event.preventDefault();
-  let card = createCard({name: countryInput.value, link: srcInput.value});
+  const card = createCard({ name: countryInput.value, link: srcInput.value });
   list.prepend(card);
   closePopup(elementPopup);
   elementForm.reset();
@@ -103,25 +96,21 @@ const imageSubtitle = document.querySelector('.popup__subtitle');
 
 function createCard(item) {
   const card = template.cloneNode(true);
+  const elementCard = card.querySelector('.element__image');
   card.querySelector('.element__title').textContent = item.name;
-  card.querySelector('.element__image').src = item.link;
-  
+  elementCard.src = item.link;
+  elementCard.alt = item.link;
   card.querySelector('.element__heart').addEventListener('click', (evt) => {
     evt.target.classList.toggle('element__heart_aktiv');
   });
   card.querySelector('.element__trash').addEventListener('click', (e) => {
     e.target.closest('.element').remove();
   });
-
-  const elementCard = card.querySelector('.element__image');
   elementCard.addEventListener('click', function () {
-    openImage(imageClickPopup);
-  });
-  function openImage (imageClickPopup) {
-    imageClickPopup.classList.add('popup_opened');
+    openPopup(imageClickPopup);
     imageSubtitle.textContent = item.name;
-    imagePopup.alt = item.link; 
+    imagePopup.alt = item.link;
     imagePopup.src = item.link;
-  };
+  });
   return card;
 };
