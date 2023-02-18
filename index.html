@@ -30,28 +30,32 @@
   <footer class="footer">
     <p class="footer__text">© 2022 Mesto Russia</p>
   </footer>
-  <div class="popup profile-popup">
-    <div class="popup__container">
-      <button type="button" class="popup__close"></button>
-      <h3 class="popup__title">Редактировать профиль</h3>
-      <form class="popup__content profile-form" name="Профиль">
-        <input required type="text" class="popup__name profile-name" name="Имя" value="Жак-Ив Кусто" placeholder="Имя">
-        <input required type="text" class="popup__name profile-job" name="О себе" value="Исследователь океана" placeholder="О себе">
-        <button class="popup__submit" type="submit">Сохранить</button>
-      </form>
-    </div>
-  </div>
-  <div class="popup element-popup">
-    <div class="popup__container">
-      <button type="button" class="popup__close"></button>
-      <h3 class="popup__title">Редактировать профиль</h3>
-      <form class="popup__content element-form" name="Карточка">
-        <input required type="text" class="popup__name element-country" name="Название" value="" placeholder="Название">
-        <input required type="text" class="popup__name element-src" name="Ссылка" value="" placeholder="Ссылка на картинку">
-        <button class="popup__submit element-submit" type="submit">Сохранить</button>
-      </form>
-    </div>
-  </div>
+  <form class="popup profile-popup" novalidate> 
+    <div class="popup__container"> 
+      <button type="button" class="popup__close"></button> 
+      <h3 class="popup__title">Редактировать профиль</h3> 
+      <fieldset class="popup__content profile-form" name="Профиль"> 
+        <input class="popup__name profile-name" required type="text" name="name" placeholder="Имя" minlength="2" maxlength="400" id="name-input" title="Вы пропустили это поле.">
+        <span class="popup__name-error name-input-error"></span>
+        <input class="popup__name profile-job" required type="text" name="link" placeholder="О себе" minlength="2" maxlength="200" id="describe-input" title="Вы пропустили это поле.">
+        <span class="popup__name-error describe-input-error"></span>
+        <button class="popup__submit" type="submit">Сохранить</button> 
+      </fieldset> 
+    </div> 
+  </form> 
+  <form class="popup element-popup" novalidate> 
+    <div class="popup__container"> 
+      <button type="button" class="popup__close"></button> 
+      <h3 class="popup__title">Редактировать профиль</h3> 
+      <fieldset class="popup__content element-form" name="Карточка"> 
+        <input class="popup__name element-country" required type="text" name="name" placeholder="Название" minlength="2" maxlength="30" id="title-input" title="Вы пропустили это поле.">
+        <span class="popup__name-error title-input-error"></span>
+        <input class="popup__name element-src" required type="url" name="link" placeholder="Ссылка на картинку" id="src-input">
+        <span class="popup__name-error src-input-error" title="Введите адрес сайта."></span>
+        <button class="popup__submit element-submit" type="submit">Сохранить</button> 
+      </fieldset> 
+    </div> 
+  </form>
   <div class="popup image-popup">
     <div class="popup__box">
       <img class="popup__image" alt="Красивые места.">
@@ -70,5 +74,6 @@
     </article>
   </template>
   <script src="./scripts/index.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 </html>
