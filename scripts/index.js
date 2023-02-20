@@ -10,6 +10,7 @@ profileOpenBtn.addEventListener('click', function () {
 function openPopup(popup) { 
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closeByEscape);
+  enableValidation(config);
 }; 
 
 function closePopup(popup) { 

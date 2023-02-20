@@ -64,12 +64,6 @@ const enableValidation = (config) => {
   });
 };
 
-[ profileOpenBtn, profilePlus ].forEach(function(element) {
-  element.addEventListener("click", function() {
-    enableValidation(config);
-  });
-});
-
 function toggleButtonState (inputList, buttonElement, config) {
   const formIsValid = inputList.every(({validity}) => validity.valid);
   if (formIsValid) {
