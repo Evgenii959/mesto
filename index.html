@@ -1,79 +1,114 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Путешествия</title>
-  <link rel="stylesheet" href="./pages/index.css">
-</head>
-<body class="page">
-  <header class="header">
-    <img class="header__logo" src="./images/logo.svg" alt="Логотип Россия">
-  </header>
-  <main>
-    <section class="profile">
-      <img class="profile__avatar" src="./images/image.jpg" alt="Путешественник">
-      <div class="profile__block">
-        <div class="profile__info">
-          <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <p class="profile__subtitle">Исследователь океана</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Путешествия</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body class="page">
+    <header class="header">
+      <img class="header__logo" src="./images/logo.svg" alt="Логотип Россия" />
+    </header>
+    <main>
+      <section class="profile">
+        <img class="profile__avatar" src="./images/image.jpg" alt="Путешественник" />
+        <div class="profile__block">
+          <div class="profile__info">
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <p class="profile__subtitle">Исследователь океана</p>
+          </div>
+          <button class="profile__icon" type="button"></button>
         </div>
-        <button class="profile__icon" type="button"></button>
+        <button class="profile__plus" type="button"></button>
+      </section>
+      <section class="elements">
+        <article class="list"></article>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">© 2022 Mesto Russia</p>
+    </footer>
+    <div class="popup profile-popup">
+      <div class="popup__container">
+        <button type="button" class="popup__close"></button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__content profile-form" name="Профиль" novalidate>
+          <input
+            class="popup__name profile-name"
+            required
+            type="text"
+            name="name"
+            placeholder="Имя"
+            minlength="2"
+            maxlength="400"
+            id="name-input"
+            title="Вы пропустили это поле."
+          />
+          <span class="popup__name-error name-input-error"></span>
+          <input
+            class="popup__name profile-job"
+            required
+            type="text"
+            name="link"
+            placeholder="О себе"
+            minlength="2"
+            maxlength="200"
+            id="describe-input"
+            title="Вы пропустили это поле."
+          />
+          <span class="popup__name-error describe-input-error"></span>
+          <button class="popup__submit" type="submit">Сохранить</button>
+        </form>
       </div>
-      <button class="profile__plus" type="button"></button>
-    </section>
-    <section class="elements">
-      <article class="list">
-      </article>
-    </section>
-  </main>
-  <footer class="footer">
-    <p class="footer__text">© 2022 Mesto Russia</p>
-  </footer>
-  <div class="popup profile-popup"> 
-    <div class="popup__container"> 
-      <button type="button" class="popup__close"></button> 
-      <h3 class="popup__title">Редактировать профиль</h3> 
-      <form class="popup__content profile-form" name="Профиль" novalidate> 
-        <input class="popup__name profile-name" required type="text" name="name" placeholder="Имя" minlength="2" maxlength="400" id="name-input" title="Вы пропустили это поле.">
-        <span class="popup__name-error name-input-error"></span>
-        <input class="popup__name profile-job" required type="text" name="link" placeholder="О себе" minlength="2" maxlength="200" id="describe-input" title="Вы пропустили это поле.">
-        <span class="popup__name-error describe-input-error"></span>
-        <button class="popup__submit" type="submit">Сохранить</button> 
-      </form> 
-    </div> 
-  </div> 
-  <div class="popup element-popup"> 
-    <div class="popup__container"> 
-      <button type="button" class="popup__close"></button> 
-      <h3 class="popup__title">Редактировать профиль</h3> 
-      <form class="popup__content element-form" name="Карточка" novalidate> 
-        <input class="popup__name element-country" required type="text" name="name" placeholder="Название" minlength="2" maxlength="30" id="title-input" title="Вы пропустили это поле.">
-        <span class="popup__name-error title-input-error"></span>
-        <input class="popup__name element-src" required type="url" name="link" placeholder="Ссылка на картинку" id="src-input">
-        <span class="popup__name-error src-input-error" title="Введите адрес сайта."></span>
-        <button class="popup__submit element-submit" type="submit" disabled>Сохранить</button> 
-      </form> 
-    </div> 
-  </div>
-  <div class="popup image-popup">
-    <div class="popup__box">
-      <img class="popup__image" alt="Красивые места.">
-      <button type="button" class="popup__close"></button>
-      <p class="popup__subtitle"></p>
     </div>
-  </div>
-  <template id="elements">
-    <article class="element">
-      <img class="element__image" alt="Путешествия.">
-      <button class="element__trash"></button>
-      <div class="element__title-heart">
-        <h2 class="element__title"></h2>
-        <button type="button" class="element__heart"></button>
+    <div class="popup element-popup">
+      <div class="popup__container">
+        <button type="button" class="popup__close"></button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__content element-form" name="Карточка" novalidate>
+          <input
+            class="popup__name element-country"
+            required
+            type="text"
+            name="name"
+            placeholder="Название"
+            minlength="2"
+            maxlength="30"
+            id="title-input"
+            title="Вы пропустили это поле."
+          />
+          <span class="popup__name-error title-input-error"></span>
+          <input
+            class="popup__name element-src"
+            required
+            type="url"
+            name="link"
+            placeholder="Ссылка на картинку"
+            id="src-input"
+          />
+          <span class="popup__name-error src-input-error" title="Введите адрес сайта."></span>
+          <button class="popup__submit element-submit" type="submit" disabled>Сохранить</button>
+        </form>
       </div>
-    </article>
-  </template>
-  <script src="./scripts/index.js"></script>
-  <script src="./scripts/validate.js"></script>
-</body>
+    </div>
+    <div class="popup image-popup">
+      <div class="popup__box">
+        <img class="popup__image" alt="Красивые места." />
+        <button type="button" class="popup__close"></button>
+        <p class="popup__subtitle"></p>
+      </div>
+    </div>
+    <template id="elements">
+      <article class="element">
+        <img class="element__image" alt="Путешествия." />
+        <button class="element__trash"></button>
+        <div class="element__title-heart">
+          <h2 class="element__title"></h2>
+          <button type="button" class="element__heart"></button>
+        </div>
+      </article>
+    </template>
+    <script src="./scripts/index.js" type="module" defer></script>
+  </body>
 </html>
