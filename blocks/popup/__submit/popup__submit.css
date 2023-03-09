@@ -19,7 +19,6 @@
 }
 @media (max-width: 320px) {
   .popup__submit  {
-    margin-top: 45px;
     font-size: 14px;
     line-height: 17px;
   }
