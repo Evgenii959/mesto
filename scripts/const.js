@@ -13,6 +13,8 @@ const srcInput = document.querySelector('.element-src');
 const profilePlus = document.querySelector('.profile__plus');
 const list = document.querySelector('.list');
 const popups = document.querySelectorAll('.popup');
+const formCardPopup = document.querySelector('.element-form');
+const formInfoPopup = document.querySelector('.profile-form');
 
 const initialCards = [
   {
@@ -79,4 +81,6 @@ export {
   initialCards,
   config,
   selectors,
+  formCardPopup,
+  formInfoPopup,
 };

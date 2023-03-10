@@ -19,11 +19,13 @@ import {
   initialCards,
   config,
   selectors,
+  formCardPopup,
+  formInfoPopup,
 } from './const.js';
 import FormValidator from './FormValidator.js';
-const cardValidator = new FormValidator(config, '.element-form');
+const cardValidator = new FormValidator(config, formCardPopup);
 cardValidator.enableValidation();
-const infoValidator = new FormValidator(config, '.profile-form');
+const infoValidator = new FormValidator(config, formInfoPopup);
 infoValidator.enableValidation();
 
 profileOpenBtn.addEventListener('click', function () {
@@ -52,10 +54,14 @@ profilePlus.addEventListener('click', function () {
 
 elementForm.addEventListener('submit', handleElementFormSubmit);
 
+function createCard(card) {
+  return new Card(card, '#elements', selectors, openImagePopup).createCard();
+}
+
 function handleElementFormSubmit(event) {
   event.preventDefault();
   const card = { name: countryInput.value, link: srcInput.value };
-  const cards = new Card(card, selectors, openImagePopup).createCard();
+  const cards = createCard(card);
   list.prepend(cards);
   closePopup(elementPopup);
   elementForm.reset();
@@ -63,7 +69,7 @@ function handleElementFormSubmit(event) {
 
 function renderCards(initialCards) {
   initialCards.forEach((item) => {
-    const cards = new Card(item, selectors, openImagePopup).createCard();
+    const cards = createCard(item);
     list.prepend(cards);
   });
 }
