@@ -12,10 +12,10 @@
   font-size: 18px;
   line-height: 22px;
   text-align: center;
+  cursor: pointer;
 }
 .popup__submit:hover {
   opacity: 0.8;
-  cursor: pointer;
 }
 @media (max-width: 320px) {
   .popup__submit  {
