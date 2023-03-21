@@ -1,0 +1,31 @@
+{
+  "name": "mesto",
+  "version": "1.0.0",
+  "description": "https://evgenii959.github.io/mesto/ Проект: место. В данном проекте мы учимся применять JS. Делать попап, актиные кнопки, редактировать профиль. Сайт сделан для двух разрешений 1280, 320. Завершая 6 спринт, мы научились плавно открывать попапы, удалять и добавлять элементы. Переключать лайки. Работать с несколькими попапами. На 7 спринте создали классы, узнали что такое this. Сделали код более понятным.",
+  "main": "babel.config.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.3",
+    "cssnano": "^5.1.15",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.5",
+    "postcss-loader": "^7.1.0",
+    "webpack": "^5.76.1",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.12.0"
+  },
+  "dependencies": {
+    "core-js": "^3.29.1"
+  }
+}
