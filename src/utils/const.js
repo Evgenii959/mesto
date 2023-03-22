@@ -44,7 +44,7 @@ const initialCards = [
 ];
 
 const config = {
-  formSelector: '.popup',
+  popupSelector: '.popup',
   inputSelector: '.popup__name',
   buttonSelector: '.popup__submit',
   inactiveButtonClass: 'popup__submit_inactive',

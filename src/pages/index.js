@@ -1,5 +1,5 @@
 import './index.css';
-import Card from './scripts/Card';
+import Card from '../components/Card';
 import {
   profileOpenBtn,
   nameInput,
@@ -10,12 +10,12 @@ import {
   selectors,
   formCardPopup,
   formInfoPopup,
-} from './scripts/const.js';
-import FormValidator from './scripts/FormValidator.js';
-import PopupWithImage from './scripts/PopupWithImage.js';
-import Section from './scripts/Section.js';
-import PopupWithForm from './scripts/PopupWithForm.js';
-import UserInfo from './scripts/UserInfo.js';
+} from '../utils/const.js';
+import FormValidator from '../components/FormValidator.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import Section from '../components/Section.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import UserInfo from '../components/UserInfo.js';
 
 const cardValidator = new FormValidator(config, formCardPopup);
 cardValidator.enableValidation();
