@@ -1,6 +1,13 @@
-class Api {
+export default class Api {
   constructor (config) {
     this._url = config.url;
-    this._headers = config._headers;
+    this._headers = config.headers;
   }
+
+    getInitialCards() {
+      return fetch(`${this._url}/cards`, {
+        headers: this._headers,
+      })
+        .then((res) => res.json())
+    }
 }

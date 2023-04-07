@@ -46,15 +46,5 @@ class Card {
     return this._card;
   }
 }
-
-fetch('https://mesto.nomoreparties.co/v1/cohort-63/cards', {
-  headers: {
-    authorization: 'a23d573b-d37d-4ea7-b717-f5574b5b83fe',
-  },
-})
-  .then((res) => res.json())
-  .then((result) => {
-    console.log(result);
-  });
   
 export default Card;

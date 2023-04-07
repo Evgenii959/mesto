@@ -19,6 +19,7 @@ import Section from '../components/Section.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import UserInfo from '../components/UserInfo.js';
 import PopupWithConfirm from '../components/PopupWithConfirm.js';
+import Api from '../components/Api.js'
 
 const cardValidator = new FormValidator(config, formCardPopup);
 cardValidator.enableValidation();
@@ -40,13 +41,14 @@ popupProfile.setEventListener();
 const popupConfirm = new PopupWithConfirm('.confirm-popup', handleConfirmFormSubmit);
 popupConfirm.setEventListener();
 
-/* const Api = new Api({
+const api = new Api({
   url: 'https://mesto.nomoreparties.co/v1/cohort-63',
   headers: {
     authorization: 'a23d573b-d37d-4ea7-b717-f5574b5b83fe',
     'Content-Type': 'application/json'
   },
-}); */
+});
+api.getInitialCards();
 
 function handleProfileFormSubmit(value) {
   userInfo.setUserInfo(value.name, value.job);
@@ -60,11 +62,8 @@ function handleElementFormSubmit(value) {
   popupCard.close();
 }
 
-/* popupConfirm.open(); */
-
 function handleConfirmFormSubmit(card) {
-/*   card.remove(); */
-console.log(card)
+  card.remove();
   popupConfirm.close();
 }
 
@@ -88,27 +87,23 @@ function openImagePopup(name, link) {
 }
 
 function openConfirmPopup(card) {
-  console.log(card)
   popupConfirm.open(card);
 }
-
-formConfirmPopup.addEventListener('click', function () {
-  popupConfirm.open();
-});
 
 function renderCards(item) {
   const card = createCard(item);
   return card;
 }
 
-const section = new Section(
-  {
-    items: initialCards,
-    renderer: (item) => {
+const section = new Section((item) => {
       const cardElement = renderCards(item);
       section.addItem(cardElement);
     },
-  },
   '.list'
 );
 section.render();
+console.log(api.getInitialCards());
+Promise.all([api.getInitialCards()])
+.then((res) => {
+  console.log(res)
+})
