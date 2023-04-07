@@ -1,9 +1,10 @@
 class Card {
-  constructor(item, temlateSelector, selectors, openImagePopup) {
+  constructor(item, temlateSelector, selectors, openImagePopup, openConfirmPopup) {
     this._item = item;
     this._temlateSelector = temlateSelector;
     this._selectors = selectors;
     this._openImagePopup = openImagePopup;
+    this._openConfirmPopup = openConfirmPopup;
   }
 
   _getTemplate() {
@@ -19,8 +20,9 @@ class Card {
   }
 
   _handleDeleteCard() {
-    this._card.remove();
-    this._card = null;
+/*     this._card.remove();
+    this._card = null; */
+    this._openConfirmPopup(this._card);
   }
 
   _setEventListeners() {
@@ -45,4 +47,14 @@ class Card {
   }
 }
 
+fetch('https://mesto.nomoreparties.co/v1/cohort-63/cards', {
+  headers: {
+    authorization: 'a23d573b-d37d-4ea7-b717-f5574b5b83fe',
+  },
+})
+  .then((res) => res.json())
+  .then((result) => {
+    console.log(result);
+  });
+  
 export default Card;

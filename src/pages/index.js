@@ -10,12 +10,15 @@ import {
   selectors,
   formCardPopup,
   formInfoPopup,
+  formConfirmPopup,
+  formUpdatePopup,
 } from '../utils/const.js';
 import FormValidator from '../components/FormValidator.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import Section from '../components/Section.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import UserInfo from '../components/UserInfo.js';
+import PopupWithConfirm from '../components/PopupWithConfirm.js';
 
 const cardValidator = new FormValidator(config, formCardPopup);
 cardValidator.enableValidation();
@@ -34,6 +37,17 @@ const userInfo = new UserInfo({ title: '.profile__title', subtitle: '.profile__s
 const popupProfile = new PopupWithForm('.profile-popup', handleProfileFormSubmit);
 popupProfile.setEventListener();
 
+const popupConfirm = new PopupWithConfirm('.confirm-popup', handleConfirmFormSubmit);
+popupConfirm.setEventListener();
+
+/* const Api = new Api({
+  url: 'https://mesto.nomoreparties.co/v1/cohort-63',
+  headers: {
+    authorization: 'a23d573b-d37d-4ea7-b717-f5574b5b83fe',
+    'Content-Type': 'application/json'
+  },
+}); */
+
 function handleProfileFormSubmit(value) {
   userInfo.setUserInfo(value.name, value.job);
   popupProfile.close();
@@ -44,6 +58,14 @@ function handleElementFormSubmit(value) {
   const newCard = createCard(card);
   section.addItem(newCard);
   popupCard.close();
+}
+
+/* popupConfirm.open(); */
+
+function handleConfirmFormSubmit(card) {
+/*   card.remove(); */
+console.log(card)
+  popupConfirm.close();
 }
 
 profileOpenBtn.addEventListener('click', function () {
@@ -58,12 +80,21 @@ profilePlus.addEventListener('click', function () {
 });
 
 function createCard(card) {
-  return new Card(card, '#elements', selectors, openImagePopup).createCard();
+  return new Card(card, '#elements', selectors, openImagePopup, openConfirmPopup).createCard();
 }
 
 function openImagePopup(name, link) {
   popupImage.open(name, link);
 }
+
+function openConfirmPopup(card) {
+  console.log(card)
+  popupConfirm.open(card);
+}
+
+formConfirmPopup.addEventListener('click', function () {
+  popupConfirm.open();
+});
 
 function renderCards(item) {
   const card = createCard(item);

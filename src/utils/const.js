@@ -6,8 +6,6 @@ const nameInput = document.querySelector('.profile-name');
 const jobInput = document.querySelector('.profile-job');
 const profileInput = document.querySelector('.profile__title');
 const profileJob = document.querySelector('.profile__subtitle');
-const elementPopup = document.querySelector('.element-popup');
-const elementForm = document.querySelector('.element-form');
 const countryInput = document.querySelector('.element-country');
 const srcInput = document.querySelector('.element-src');
 const profilePlus = document.querySelector('.profile__plus');
@@ -15,6 +13,8 @@ const list = document.querySelector('.list');
 const popups = document.querySelectorAll('.popup');
 const formCardPopup = document.querySelector('.element-form');
 const formInfoPopup = document.querySelector('.profile-form');
+const formConfirmPopup = document.querySelector('.confirm-popup');
+const formUpdatePopup = document.querySelector('.update-popup');
 
 const initialCards = [
   {
@@ -71,8 +71,6 @@ export {
   jobInput,
   profileInput,
   profileJob,
-  elementPopup,
-  elementForm,
   countryInput,
   srcInput,
   profilePlus,
@@ -83,4 +81,6 @@ export {
   selectors,
   formCardPopup,
   formInfoPopup,
+  formConfirmPopup,
+  formUpdatePopup,
 };
