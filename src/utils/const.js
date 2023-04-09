@@ -13,35 +13,9 @@ const list = document.querySelector('.list');
 const popups = document.querySelectorAll('.popup');
 const formCardPopup = document.querySelector('.element-form');
 const formInfoPopup = document.querySelector('.profile-form');
-const formConfirmPopup = document.querySelector('.confirm-popup');
-const formUpdatePopup = document.querySelector('.update-popup');
-
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
-  },
-];
+const profileAvatar = document.querySelector('.profile__avatar-edit');
+const formAvatarPopup = document.querySelector('.update-popup');
+const profileAvatarOverlay = document.querySelector('.profile__avatar-overlay');
 
 const config = {
   popupSelector: '.popup',
@@ -60,6 +34,7 @@ const selectors = {
   elementHeart: '.element__heart',
   elementHeartAktiv: 'element__heart_aktiv',
   elementTrash: '.element__trash',
+  elementLikeCount: '.element__heart_count',
 };
 
 export {
@@ -76,11 +51,11 @@ export {
   profilePlus,
   list,
   popups,
-  initialCards,
   config,
   selectors,
   formCardPopup,
   formInfoPopup,
-  formConfirmPopup,
-  formUpdatePopup,
+  profileAvatar,
+  formAvatarPopup,
+  profileAvatarOverlay,
 };
