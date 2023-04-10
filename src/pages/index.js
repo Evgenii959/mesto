@@ -9,9 +9,9 @@ import {
   selectors,
   formCardPopup,
   formInfoPopup,
-  profileAvatar,
-  formAvatarPopup,
   profileAvatarOverlay,
+  formAvatarPopup,
+  profileAvatarImage,
 } from '../utils/const.js';
 import FormValidator from '../components/FormValidator.js';
 import PopupWithImage from '../components/PopupWithImage.js';
@@ -109,7 +109,7 @@ function handleAvatarFormSubmit(value, button) {
   api
     .editAvatar(value.avatar)
     .then((res) => {
-      profileAvatar.src = res.avatar;
+      profileAvatarImage.src = res.avatar;
       popupAvatar.close();
       changeButton(button, oldButtonText);
     })
@@ -189,7 +189,7 @@ Promise.all([api.getInitialCards(), api.getUser()])
   .then((res) => {
     const user = res[1];
     userInfo.setUserInfo(user);
-    profileAvatar.src = user.avatar;
+    profileAvatarImage.src = user.avatar;
     userInfo.id = user._id;
     section.render(res[0].reverse(), userInfo.id);
   })

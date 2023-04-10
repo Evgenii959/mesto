@@ -13,9 +13,9 @@ const list = document.querySelector('.list');
 const popups = document.querySelectorAll('.popup');
 const formCardPopup = document.querySelector('.element-form');
 const formInfoPopup = document.querySelector('.profile-form');
-const profileAvatar = document.querySelector('.profile__avatar-edit');
-const formAvatarPopup = document.querySelector('.update-popup');
 const profileAvatarOverlay = document.querySelector('.profile__avatar-overlay');
+const formAvatarPopup = document.querySelector('.update-popup');
+const profileAvatarImage = document.querySelector('.profile__image');
 
 const config = {
   popupSelector: '.popup',
@@ -55,7 +55,7 @@ export {
   selectors,
   formCardPopup,
   formInfoPopup,
-  profileAvatar,
-  formAvatarPopup,
   profileAvatarOverlay,
+  formAvatarPopup,
+  profileAvatarImage,
 };

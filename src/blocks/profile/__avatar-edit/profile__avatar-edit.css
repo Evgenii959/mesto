@@ -1,20 +1,11 @@
 .profile__avatar-edit {
-  position: relative;
-  background-color: transparent;
-  outline: none;
-  border: none;
-}
-.profile__avatar-edit::before {
   content: url(../../../images/update.svg);
-  position: absolute;
-  top: 60px;
+  top: 50px;
   right: 0;
   bottom: 0;
-  left: 60px;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  left: 50px;
+  position: absolute;
+  opacity: 0;
 }
 @media (max-width: 650px) {
   .profile__avatar-edit {

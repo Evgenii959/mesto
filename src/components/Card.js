@@ -32,8 +32,6 @@ class Card {
   }
 
   _handleDeleteCard() {
-    /*     this._card.remove();
-    this._card = null; */
     this._openConfirmPopup(this._card, this._id);
   }
 
