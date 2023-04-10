@@ -10,10 +10,13 @@
 .profile__avatar-overlay:hover .profile__avatar-edit {
   opacity: 1;
 }
-.profile__avatar-overlay::before {
+.profile__avatar-overlay:hover::before {
   background: rgba(0, 0, 0, 0.8);
   opacity: 0;
   content: '';
+  background-image: url(../../../images/update.svg);
+  background-position: center;
+  background-repeat: no-repeat;
   position: absolute;
   top: 0;
   right: 0;
@@ -21,8 +24,6 @@
   left: 0;
   transition: 0.3s;
   border-radius: 48%;
-}
-.profile__avatar-overlay:hover:before {
   opacity: 0.8;
 }
 @media (max-width: 650px) {
