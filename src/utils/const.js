@@ -15,7 +15,6 @@ const formCardPopup = document.querySelector('.element-form');
 const formInfoPopup = document.querySelector('.profile-form');
 const profileAvatarOverlay = document.querySelector('.profile__avatar-overlay');
 const formAvatarPopup = document.querySelector('.update-popup');
-const profileAvatarImage = document.querySelector('.profile__image');
 
 const config = {
   popupSelector: '.popup',
@@ -57,5 +56,4 @@ export {
   formInfoPopup,
   profileAvatarOverlay,
   formAvatarPopup,
-  profileAvatarImage,
 };

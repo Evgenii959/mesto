@@ -11,7 +11,6 @@ import {
   formInfoPopup,
   profileAvatarOverlay,
   formAvatarPopup,
-  profileAvatarImage,
 } from '../utils/const.js';
 import FormValidator from '../components/FormValidator.js';
 import PopupWithImage from '../components/PopupWithImage.js';
@@ -55,66 +54,73 @@ const api = new Api({
     'Content-Type': 'application/json',
   },
 });
-api.getInitialCards();
 
 function handleProfileFormSubmit(value, button) {
   const oldButtonText = button.textContent;
-  changeButton(button, 'Ожидайте...');
+  changeButton(button, 'Сохранение...');
   api
     .editUser(value.name, value.job)
     .then((user) => {
       userInfo.setUserInfo(user);
       popupProfile.close();
-      changeButton(button, oldButtonText);
     })
     .catch((err) => {
       console.log(err); // выведем ошибку в консоль
+    })
+    .finally(() => {
+      changeButton(button, oldButtonText);
     });
 }
 
 function handleElementFormSubmit(value, button) {
   const oldButtonText = button.textContent;
-  changeButton(button, 'Ожидайте...');
+  changeButton(button, 'Сохранение...');
   api
     .addCard(value.name, value.link)
     .then((data) => {
       const newCard = createCard(data, userInfo.id);
       section.addItem(newCard);
       popupCard.close();
-      changeButton(button, oldButtonText);
     })
     .catch((err) => {
       console.log(err); // выведем ошибку в консоль
+    })
+    .finally(() => {
+      changeButton(button, oldButtonText);
     });
 }
 
 function handleConfirmFormSubmit(card, cardId, button) {
   const oldButtonText = button.textContent;
-  changeButton(button, 'Ожидайте...');
+  changeButton(button, 'Сохранение...');
   api
     .deleteCard(cardId)
     .then(() => {
       card.remove();
       popupConfirm.close();
-      changeButton(button, oldButtonText);
     })
     .catch((err) => {
       console.log(err); // выведем ошибку в консоль
+    })
+    .finally(() => {
+      changeButton(button, oldButtonText);
     });
 }
 
 function handleAvatarFormSubmit(value, button) {
   const oldButtonText = button.textContent;
-  changeButton(button, 'Ожидайте...');
+  changeButton(button, 'Сохранение...');
   api
     .editAvatar(value.avatar)
     .then((res) => {
-      profileAvatarImage.src = res.avatar;
+      userInfo.changeAvatar(res);
       popupAvatar.close();
-      changeButton(button, oldButtonText);
     })
     .catch((err) => {
       console.log(err); // выведем ошибку в консоль
+    })
+    .finally(() => {
+      changeButton(button, oldButtonText);
     });
 }
 
@@ -188,8 +194,8 @@ const section = new Section((item, userId) => {
 Promise.all([api.getInitialCards(), api.getUser()])
   .then((res) => {
     const user = res[1];
+    userInfo.changeAvatar(user);
     userInfo.setUserInfo(user);
-    profileAvatarImage.src = user.avatar;
     userInfo.id = user._id;
     section.render(res[0].reverse(), userInfo.id);
   })
