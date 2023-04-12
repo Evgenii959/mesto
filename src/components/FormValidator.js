@@ -58,4 +58,12 @@ export default class FormValidator {
   enableValidation() {
     this._setEventListeners();
   }
+
+  resetError() {
+    this._inputList.forEach((formInput) => {
+      this._hideInputError(formInput); // здесь очищаем ошибки валидации с помощью _hideInputError
+    });
+    // актуализируем состояние кнопки
+    this._toggleButtonState();
+  }
 }

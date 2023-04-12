@@ -130,6 +130,7 @@ profileAvatarOverlay.addEventListener('click', function () {
 
 profileOpenBtn.addEventListener('click', function () {
   popupProfile.open();
+  infoValidator.resetError();
   const user = userInfo.getUserInfo();
   nameInput.value = user.name;
   jobInput.value = user.job;
@@ -137,6 +138,7 @@ profileOpenBtn.addEventListener('click', function () {
 
 profilePlus.addEventListener('click', function () {
   popupCard.open();
+  cardValidator.resetError();
 });
 
 function createCard(card, userId) {
@@ -156,6 +158,7 @@ function clickLike(cardId, card, isLiked) {
     api
       .removeLike(cardId)
       .then((res) => {
+        card._elementHeartCard.classList.remove('element__heart_aktiv');
         card.updateCountLikes(res.likes.length);
       })
       .catch((err) => {
@@ -165,6 +168,7 @@ function clickLike(cardId, card, isLiked) {
     api
       .addLike(cardId)
       .then((res) => {
+        card._elementHeartCard.classList.add('element__heart_aktiv');
         card.updateCountLikes(res.likes.length);
       })
       .catch((err) => {

@@ -22,7 +22,6 @@ class Card {
   }
 
   _handleLikeCard() {
-    this._elementHeartCard.classList.toggle('element__heart_aktiv');
     this._clickLike(this._id, this, this._isLiked);
     this._isLiked = !this._isLiked;
   }
