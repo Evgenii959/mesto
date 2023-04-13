@@ -23,6 +23,14 @@ class Card {
 
   _handleLikeCard() {
     this._clickLike(this._id, this, this._isLiked);
+  }
+
+  changeStatus(status) {
+    if(status) {
+      this._elementHeartCard.classList.remove('element__heart_aktiv');
+    } else {
+      this._elementHeartCard.classList.add('element__heart_aktiv');
+    }
     this._isLiked = !this._isLiked;
   }
 
